@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Election</title>
+</head>
+<body>
+    <h1>Stop Election</h1>
+    <p>{{ message }}</p>
+    <p>Do you want to stop the ongoing election?</p>
+    <form action="{{ url_for('stop_election') }}" method="post">
+        <input type="hidden" name="election_id" value="{{ election_id }}">
+        <label for="stop_election">Yes</label>
+        <input type="radio" id="stop_election_yes" name="stop_election" value="yes">
+        <label for="stop_election">No</label>
+        <input type="radio" id="stop_election_no" name="stop_election" value="no" checked>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

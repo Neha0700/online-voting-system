@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start New Election</title>
+</head>
+<body>
+    <h1>Start New Election</h1>
+    <form action="{{ url_for('start_election') }}" method="post">
+        <label for="start_new_election_input">Start New Election? (Yes/No):</label>
+        <input type="text" id="start_new_election_input" name="start_new_election_input" required><br><br>
+
+        <input type="hidden" id="election_id" name="election_id" value="{{ election_id }}">
+
+        <input type="submit" value="Confirm">
+    </form>
+    <p>{{ message }}</p>
+</body>
+</html>

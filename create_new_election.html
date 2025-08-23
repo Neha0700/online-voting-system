@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Election</title>
+</head>
+<body>
+    <h1>Create New Election</h1>
+    <form action="/create_new_election" method="POST">
+        <label for="election_id">Election ID:</label>
+        <input type="text" id="election_id" name="election_id" required><br><br>
+
+        <label for="election_name">Election Name:</label>
+        <input type="text" id="election_name" name="election_name" required><br><br>
+
+        <label for="start_date">Start Date:</label>
+        <input type="datetime-local" id="start_date" name="start_date" required><br><br>
+
+        <label for="end_date">End Date:</label>
+        <input type="datetime-local" id="end_date" name="end_date" required><br><br>
+
+        <label for="num_candidates">Number of Candidates:</label>
+        <input type="number" id="num_candidates" name="num_candidates" min="1" required><br><br>
+
+        <div id="candidates">
+            <!-- Candidate fields will be added dynamically here -->
+        </div>
+        
+        <button type="button" onclick="addCandidateField()">Add Candidate</button><br><br>
+
+        <input type="submit" value="Create Election">
+    </form>
+
+    <script>
+        function addCandidateField() {
+            const numCandidates = document.getElementById('num_candidates').value;
+            const candidatesDiv = document.getElementById('candidates');
+            let html = '';
+
+            for (let i = 0; i < numCandidates; i++) {
+                html += `
+                    <div>
+                        <label for="candidate_id${i}">Candidate ID:</label>
+                        <input type="text" id="candidate_id${i}" name="candidate_id${i}" required><br><br>
+                        <label for="candidate_name${i}">Candidate Name:</label>
+                        <input type="text" id="candidate_name${i}" name="candidate_name${i}" required><br><br>
+                    </div>
+                `;
+            }
+
+            candidatesDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

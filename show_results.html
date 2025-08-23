@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Election Results</title>
+  </head>
+  <body>
+    <h1>Election Results</h1>
+    {% if candidates %}
+      <table>
+        <thead>
+          <tr>
+            <th>Candidate ID</th>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for candidate in candidates %}
+            <tr>
+              <td>{{ candidate[0] }}</td>
+              <td>{{ candidate[1] }}</td>
+              <td>{{ candidate[2] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No candidates found.</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Voting System</title>
+  </head>
+  <body>
+    <h1>Online Voting System:</h1>
+    <form action="{{ url_for('vote') }}" method="post">
+      <label for="voter_id">Voter ID:</label>
+      <input type="text" id="voter_id" name="voter_id" required><br><br>
+      <label for="candidate_id">Candidate ID:</label>
+      <input type="text" id="candidate_id" name="candidate_id" required><br><br>
+      <input type="submit" value="Vote">
+    </form>
+  </body>
+</html>

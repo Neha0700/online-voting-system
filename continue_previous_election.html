@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continue Previous Election</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Continue Previous Election</h1>
+        <form method="post" action="{{ url_for('continue_previous_election') }}">
+            <fieldset>
+                <legend>Election Details:</legend>
+                <label for="election_id">Election ID:</label><br>
+                <input type="text" id="election_id" name="election_id" required><br>
+                <input type="submit" value="Continue Election">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

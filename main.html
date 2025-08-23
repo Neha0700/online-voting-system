@@ -1,0 +1,29 @@
+<!-- main.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Voting System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+            <li><a href="{{ url_for('voter_panel') }}">Voter Panel</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>About</h2>
+        <p>This is the main page of the voting system. Please select an option from the navigation menu.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Voting System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

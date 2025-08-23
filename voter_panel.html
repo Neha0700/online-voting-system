@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Panel</title>
+</head>
+<body>
+    <h1>Welcome, {{ user_info.name }}</h1>
+    <h2>Your credentials:</h2>
+    <p>Name: {{ user_info.name }}</p>
+    <p>Age: {{ user_info.age }}</p>
+    <p>Address: {{ user_info.address }}</p>
+
+    <h2>Election Information:</h2>
+    <p>Election Name: {{ election_info.election_name }}</p>
+    <p>Start Date: {{ election_info.start_date }}</p>
+    <p>End Date: {{ election_info.end_date }}</p>
+
+    <p>Voting Status: {{ voting_status }}</p>
+    
+    {% if vote_decision == "yes" %}
+    <form method="POST" action="/handle_voting">
+        <input type="hidden" id="voter_id" name="voter_id" value="{{ user_info.id }}">
+        <input type="submit" value="Vote">
+    </form>
+    {% endif %}
+</body>
+</html>

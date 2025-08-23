@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Candidates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Candidates</h1>
+        <form action="{{ url_for('vote') }}" method="POST">
+        <ul>
+        {% for candidate in candidates %}
+            <li>
+                {{ candidate[0] }}. {{ candidate[1] }}
+            </li>
+        {% endfor %}
+        </ul>
+        <label for="candidate_id">Enter Candidate ID:</label>
+        <input type="text" id="candidate_id" name="candidate_id">
+        <input type="submit" value="Submit Vote">
+    </div>
+</body>
+</html>
